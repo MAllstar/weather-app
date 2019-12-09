@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import MapView from 'react-native-maps';
+// import {} from 'react-native';
 
 class Map extends Component {
   render() {

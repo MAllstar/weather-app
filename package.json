@@ -13,6 +13,7 @@
     "native-base": "^2.13.8",
     "react": "16.9.0",
     "react-native": "0.61.5",
+    "react-native-baidumap-sdk": "^0.6.0",
     "react-native-gesture-handler": "^1.5.2",
     "react-native-maps": "react-native-community/react-native-maps#d6f89bd",
     "react-native-paper": "^3.3.0",
