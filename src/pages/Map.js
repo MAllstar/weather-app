@@ -5,7 +5,6 @@ import {
   StyleSheet,
 } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
-import MapView from 'react-native-maps';
 // import {} from 'react-native-baidumap-sdk';
 
 class Map extends Component {
@@ -13,15 +12,6 @@ class Map extends Component {
     return (
       <View style={styles.container}>
         <Text>Map</Text>
-        <MapView
-          style={styles.map}
-          initialRegion={{
-            latitude: 37.78825,
-            longitude: -122.4324,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          }}
-        />
       </View>
     );
   }
