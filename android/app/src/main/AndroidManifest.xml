@@ -21,9 +21,6 @@
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-    </application>
-
-    <application>
       <meta-data
         android:name="com.baidu.lbsapi.API_KEY"
         android:value="C3CjoByz3moD15i4O3Dr1ymqkE8LmYg6" />
