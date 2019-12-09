@@ -3,9 +3,16 @@ import {
   View,
   Text,
   StyleSheet,
+
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  Button,
+  Dimensions,
+  NativeModules
 } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
-// import {} from 'react-native-baidumap-sdk';
+import { BaiduMapManager, MapView, MapTypes, Geolocation, Overlay, MapApp } from 'react-native-baidu-map';
 
 class Map extends Component {
   render() {
