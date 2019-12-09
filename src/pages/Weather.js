@@ -3,8 +3,9 @@ import {
   View,
   Text,
 } from 'react-native';
+import { createStackNavigator } from 'react-navigation-stack';
 
-export default class Weather extends Component {
+class Weather extends Component {
   render() {
     return (
       <View>
@@ -13,3 +14,12 @@ export default class Weather extends Component {
     );
   }
 }
+
+export default WeatherStack = createStackNavigator({
+  Weather: {
+    screen: Weather,
+    navigationOptions: ({ navigation }) => ({
+      title: '天气',
+    })
+  }
+});
