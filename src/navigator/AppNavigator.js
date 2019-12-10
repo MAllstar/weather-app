@@ -6,8 +6,10 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Welcome from '../pages/Welcome';
 import SignIn from '../pages/SingIn';
-import WeatherStack from '../pages/Weather';
-import MapStack from '../pages/Map';
+import MapStack from '../pages/Map/Map';
+import WeatherStack from '../pages/Weather/Weather';
+import HistoryStack from '../pages/History/History';
+import Setting from '../pages/Setting/Setting';
 
 const InitNavigator = createStackNavigator({
   WelcomePage: {
@@ -30,10 +32,10 @@ const SignNavigator = createStackNavigator({
 const BottomTabNavigator = createBottomTabNavigator({
   Map: { screen: MapStack },
   Weather: { screen: WeatherStack },
-  History: { screen: WeatherStack },
-  Setting: { screen: SignIn },
+  History: { screen: HistoryStack },
+  Setting: { screen: Setting },
 }, {
-  initialRouteName: 'Weather',
+  initialRouteName: 'Setting',
   defaultNavigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, horizontal, tintColor }) => {
       const { routeName } = navigation.state;
@@ -66,4 +68,7 @@ export default AppNavigator = createAppContainer(createSwitchNavigator({
   Main: MainNavigator,
 }, {
   initialRouteName: 'Init',
+  defaultNavigationOptions: () => ({
+    title: 'klsdf'
+  })
 }));

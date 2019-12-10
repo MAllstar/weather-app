@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import {
-  Text,
-} from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { Container, Tab, Tabs } from 'native-base';
 
