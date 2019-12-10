@@ -1,52 +1,54 @@
 import React, { Component } from 'react';
 import {
   Text,
-  StyleSheet,
-  View,
 } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
-import { Container, Header, Tab, Tabs, TabHeading } from 'native-base';
+import { Container, Tab, Tabs } from 'native-base';
+
+import Today from './Today';
+import Recommen from './Recommen';
+import AAA from './AAA';
 
 class Weather extends Component {
-  state = {
-    active: false
-  };
-
-  handleChangeTabsActive = () => {
-    console.log(1)
-    this.setState({ active: !this.state.active });
-  };
-
   render() {
-    let { active } = this.state;
     return (
       <Container>
         <Tabs>
-          <Tab heading={
-            <TabHeading style={{ backgroundColor: active ? '#fff' : 'tomato' }}>
-              <Text>今日</Text>
-            </TabHeading>
-          }>
-            <Text>123</Text>
+          <Tab
+            heading='头条'
+            tabStyle={{
+              backgroundColor: '#f7f4ed',
+            }}
+            activeTabStyle={{
+              backgroundColor: 'tomato',
+            }} >
+            <Today />
           </Tab>
-          <Tab onPress={this.handleChangeTabsActive} heading={
-            <View onPress={this.handleChangeTabsActive}>
-              <TabHeading
-                style={{ backgroundColor: active ? 'tomato' : '#fff' }}>
-                <Text>推荐</Text>
-              </TabHeading>
-            </View>
-          }>
-            <Text>321</Text>
+          <Tab
+            heading='娱乐'
+            tabStyle={{
+              backgroundColor: '#f7f4ed',
+            }}
+            activeTabStyle={{
+              backgroundColor: 'tomato',
+            }} >
+              <Recommen />
+          </Tab>
+          <Tab
+            heading='体育'
+            tabStyle={{
+              backgroundColor: '#f7f4ed',
+            }}
+            activeTabStyle={{
+              backgroundColor: 'tomato',
+            }} >
+              <AAA />
           </Tab>
         </Tabs>
       </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-});
 
 export default WeatherStack = createStackNavigator({
   Weather: {
