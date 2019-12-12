@@ -7,17 +7,17 @@ import {
 import NavigationUtil from "../navigator/NavigationUtil";
 
 export default class Welcome extends Component {
-  componentDidMount() {
+  async componentDidMount() {
     let nav = 'Sign'
-    AsyncStorage.getItem('usr')
-      .then(value => {
-        this.timer = setTimeout(() => {
-          value ? nav = 'Main' : null
-          NavigationUtil.goPage({
-            navigation: this.props.navigation
-          }, nav)
-        }, 500)
-      })
+    let usr = await AsyncStorage.getItem('usr')
+    let auth = await AsyncStorage.getItem('auth')
+    auth ? null : usr = null
+    this.timer = setTimeout(() => {
+      usr ? nav = 'Main' : null
+      NavigationUtil.goPage({
+        navigation: this.props.navigation
+      }, nav)
+    }, 500)
   }
 
   render() {
