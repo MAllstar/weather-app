@@ -11,7 +11,7 @@ import {
   Dimensions,
 } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
-import { BaiduMapManager, MapView, MapTypes, Geolocation, Overlay } from 'react-native-baidu-map';
+import { BaiduMapManager, MapView, MapTypes, Geolocation } from 'react-native-baidu-map';
 
 BaiduMapManager.initSDK("C3CjoByz3moD15i4O3Dr1ymqkE8LmYg6");
 const { height, width } = Dimensions.get('window');
@@ -98,11 +98,14 @@ const styles = StyleSheet.create({
   },
 });
 
+import HeaderRightInfo from '../../components/common/HeaderRightInfo';
+
 export default MapStack = createStackNavigator({
   Map: {
     screen: Map,
     navigationOptions: ({ navigation }) => ({
       title: '地图',
+      headerRight: <HeaderRightInfo />
     })
   }
 });

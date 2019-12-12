@@ -40,7 +40,7 @@ export default class SignIn extends Component {
           </Form>
           <Button
             block
-            style={{ marginLeft: 10, marginRight: 10 }}
+            style={{ marginHorizontal: 10, backgroundColor: 'tomato' }}
             onPress={() => Sign.appSignIn(navigation, usr, pwd)}
           >
             <Text style={{ color: '#fff' }}>Sign Up</Text>

@@ -35,7 +35,7 @@ const BottomTabNavigator = createBottomTabNavigator({
   History: { screen: HistoryStack },
   Setting: { screen: Setting },
 }, {
-  initialRouteName: 'Setting',
+  initialRouteName: 'Map',
   defaultNavigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, horizontal, tintColor }) => {
       const { routeName } = navigation.state;
@@ -68,7 +68,4 @@ export default AppNavigator = createAppContainer(createSwitchNavigator({
   Main: MainNavigator,
 }, {
   initialRouteName: 'Init',
-  defaultNavigationOptions: () => ({
-    title: 'klsdf'
-  })
 }));

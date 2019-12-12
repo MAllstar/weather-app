@@ -47,11 +47,14 @@ class Weather extends Component {
   }
 }
 
+import HeaderRightInfo from '../../components/common/HeaderRightInfo';
+
 export default WeatherStack = createStackNavigator({
   Weather: {
     screen: Weather,
     navigationOptions: ({ navigation }) => ({
       title: '天气',
+      headerRight: <HeaderRightInfo />
     })
   }
 });

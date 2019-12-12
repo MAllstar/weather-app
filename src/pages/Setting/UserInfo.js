@@ -47,6 +47,7 @@ class MyUserInfo extends Component {
               <TextInput
                 style={styles.textInput}
                 placeholder={pwd}
+                value={pwd}
                 placeholderTextColor='#d9d9d9'
                 onChangeText={(pwd) => this.setState({ pwd })}
                 autoFocus

@@ -10,7 +10,7 @@ const MyDrawerNavigator = createDrawerNavigator({
   '历史页面': HistorySet,
   '登录设置': SignOut,
 }, {
-  initialRouteName: '登录设置',
+  initialRouteName: '用户资料',
   drawerPosition: 'left',
   drawerType: 'front',
   hideStatusBar: true,

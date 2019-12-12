@@ -23,11 +23,14 @@ class History extends Component {
   }
 }
 
+import HeaderRightInfo from '../../components/common/HeaderRightInfo';
+
 export default HistoryStack = createStackNavigator({
   History: {
     screen: History,
     navigationOptions: ({ navigation }) => ({
       title: '历史',
+      headerRight: <HeaderRightInfo />
     })
   }
 });
