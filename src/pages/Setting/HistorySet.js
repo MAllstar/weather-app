@@ -4,6 +4,7 @@ import {
   StyleSheet,
   AsyncStorage,
   ToastAndroid,
+  Text,
 } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 
@@ -34,6 +35,7 @@ class MyHistorySet extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Text>设置历史可查看天数</Text>
         <Dropdown
           value={this.state.dayNumber}
           data={dayNumberData}

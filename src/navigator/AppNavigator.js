@@ -35,7 +35,7 @@ const BottomTabNavigator = createBottomTabNavigator({
   History: { screen: HistoryStack },
   Setting: { screen: Setting },
 }, {
-  initialRouteName: 'Map',
+  initialRouteName: 'Weather',
   defaultNavigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, horizontal, tintColor }) => {
       const { routeName } = navigation.state;

@@ -4,7 +4,6 @@ import { Container, Tab, Tabs } from 'native-base';
 
 import Today from './Today';
 import Recommen from './Recommen';
-import AAA from './AAA';
 
 class Weather extends Component {
   render() {
@@ -12,7 +11,7 @@ class Weather extends Component {
       <Container>
         <Tabs>
           <Tab
-            heading='头条'
+            heading='今日'
             tabStyle={{
               backgroundColor: '#f7f4ed',
             }}
@@ -22,7 +21,7 @@ class Weather extends Component {
             <Today />
           </Tab>
           <Tab
-            heading='娱乐'
+            heading='推荐'
             tabStyle={{
               backgroundColor: '#f7f4ed',
             }}
@@ -30,16 +29,6 @@ class Weather extends Component {
               backgroundColor: 'tomato',
             }} >
               <Recommen />
-          </Tab>
-          <Tab
-            heading='体育'
-            tabStyle={{
-              backgroundColor: '#f7f4ed',
-            }}
-            activeTabStyle={{
-              backgroundColor: 'tomato',
-            }} >
-              <AAA />
           </Tab>
         </Tabs>
       </Container>
