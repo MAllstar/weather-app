@@ -18,6 +18,7 @@
     "react-native-qrcode-svg": "^6.0.1",
     "react-native-reanimated": "^1.4.0",
     "react-native-screens": "^2.0.0-alpha.17",
+    "react-native-sqlite-storage": "^4.1.0",
     "react-native-svg": "^9.13.6",
     "react-navigation": "^4.0.10",
     "react-navigation-drawer": "^2.3.3",
