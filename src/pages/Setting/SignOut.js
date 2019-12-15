@@ -10,6 +10,7 @@ import { Radio } from 'native-base';
 
 import HeaderRightMenu from '../../components/common/HeaderRightMenu';
 import Sign from '../../utils/Sign';
+import { SQL } from '../../utils/sqlite';
 
 class MySignOut extends Component {
   state = {
@@ -17,15 +18,14 @@ class MySignOut extends Component {
   };
 
   async componentDidMount() {
-    let selected = await AsyncStorage.getItem('auth')
-    console.log(+selected)
-    this.setState({ selected: +selected ? true : false })
+    let authResult = await SQL('SELECT * FROM login');
+    this.setState({ selected: authResult.rows.item(0).auth === 1 ? true : false });
   }
 
-  handleClickRadio = () => {
-    this.setState({ selected: !this.state.selected }, () => {
-      AsyncStorage.setItem('auth', this.state.selected ? '1' : '0')
-    })
+  handleClickRadio = async () => {
+    let { selected } = this.state;
+    await SQL(`UPDATE login set auth=${selected ? 0 : 1}`);
+    this.setState({ selected: !selected });
   }
 
   render() {

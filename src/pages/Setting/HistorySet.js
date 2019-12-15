@@ -10,6 +10,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import HeaderRightMenu from '../../components/common/HeaderRightMenu';
 import Dropdown from '../../components/common/Dropdown';
+import { SQL } from '../../utils/sqlite';
 
 const dayNumberData = [
   { key: 1 },
@@ -26,10 +27,15 @@ class MyHistorySet extends Component {
     dayNumber: 7,
   };
 
+  async componentDidMount() {
+    let dayResult = await SQL('SELECT * FROM historyDay');
+    this.setState({ dayNumber: dayResult.rows.item(0).day });
+  }
+
   handleChangeDayNumber = async (value) => {
-    this.setState({ dayNumber: value })
-    await AsyncStorage.setItem('historyDay', value.toString())
-    ToastAndroid.show(`当前可查看近${value}天的历史天气`, ToastAndroid.SHORT)
+    await SQL(`UPDATE historyDay set day=${value}`);
+    this.setState({ dayNumber: value });
+    ToastAndroid.show(`当前可查看近${value}天的历史天气`, ToastAndroid.SHORT);
   }
 
   render() {

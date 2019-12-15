@@ -52,23 +52,21 @@ export default class Today extends Component {
 
 function WeatherList(props) {
   return (
-    <Container>
-      <Content>
-        <Card>
-          {
-            props.data.map((value, index) => {
-              return (
-                <CardItem>
-                  <Octicons name="primitive-dot" size={20} color='tomato' />
-                  <Text style={{ marginLeft: 10 }}>{`${value.type}:`}</Text>
-                  <Text style={{ marginLeft: 10 }}>{value.value}</Text>
-                </CardItem>
-              )
-            })
-          }
-        </Card>
-      </Content>
-    </Container>
+    <Content>
+      <Card>
+        {
+          props.data.map((value, index) => {
+            return (
+              <CardItem>
+                <Octicons name="primitive-dot" size={20} color='tomato' />
+                <Text style={{ marginLeft: 10 }}>{`${value.type}:`}</Text>
+                <Text style={{ marginLeft: 10 }}>{value.value}</Text>
+              </CardItem>
+            )
+          })
+        }
+      </Card>
+    </Content>
   )
 }
 
