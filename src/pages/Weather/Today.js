@@ -4,8 +4,9 @@ import {
   StyleSheet,
   ScrollView,
   Image,
+  ToastAndroid,
 } from 'react-native';
-import { Container, Content, Card, CardItem, Text, Icon, Right } from 'native-base';
+import { Container, Content, Card, CardItem, Text } from 'native-base';
 import Octicons from 'react-native-vector-icons/Octicons';
 
 export default class Today extends Component {
@@ -29,7 +30,7 @@ export default class Today extends Component {
       this.setState({ curCityData: data });
     } catch (err) {
       console.log(err)
-      alert('天气数据请求失败！')
+      ToastAndroid.show('天气数据请求失败！', ToastAndroid.SHORT)
     }
   }
 
@@ -50,7 +51,6 @@ export default class Today extends Component {
 }
 
 function WeatherList(props) {
-  let { data } = props;
   return (
     <Container>
       <Content>
