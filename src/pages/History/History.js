@@ -4,8 +4,6 @@ import {
   AsyncStorage,
 } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
-<<<<<<< HEAD
-<<<<<<< HEAD
 import SQLite from 'react-native-sqlite-storage';
 import { Container, Content, Card, CardItem, Text } from 'native-base';
 
@@ -27,26 +25,10 @@ class History extends Component {
       data: null,
     }
   }
-=======
-
-class History extends Component {
-  state = {
-    historyDay: 7
-  };
->>>>>>> parent of 35acaa9... SQLite connection succeeded! niiiiice!
-=======
-
-class History extends Component {
-  state = {
-    historyDay: 7
-  };
->>>>>>> parent of 35acaa9... SQLite connection succeeded! niiiiice!
 
   async componentDidMount() {
     let historyDay = await AsyncStorage.getItem('historyDay')
     if (historyDay) this.setState({ historyDay })
-<<<<<<< HEAD
-<<<<<<< HEAD
     let { db } = this.state;
     db.transaction(tx => {
       tx.executeSql('SELECT * FROM history;', [], (tx, result) => {
@@ -56,10 +38,6 @@ class History extends Component {
         this.setState({ data: JSON.stringify(result.rows) })
       })
     })
-=======
->>>>>>> parent of 35acaa9... SQLite connection succeeded! niiiiice!
-=======
->>>>>>> parent of 35acaa9... SQLite connection succeeded! niiiiice!
   }
 
   render() {
