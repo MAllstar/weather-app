@@ -9,6 +9,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import org.pgsqlite.SQLitePluginPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -19,21 +20,21 @@ public class MainApplication extends Application implements ReactApplication {
           return BuildConfig.DEBUG;
         }
 
-        @Override
-        protected List<ReactPackage> getPackages() {
-          @SuppressWarnings("UnnecessaryLocalVariable")
-          List<ReactPackage> packages = new PackageList(this).getPackages();
-          // Packages that cannot be autolinked yet can be added manually here, for example:
-          // packages.add(new MyReactNativePackage());
-          return packages;
-        }
-
         // @Override
         // protected List<ReactPackage> getPackages() {
-        //   return Arrays.<ReactPackage>asList(
-        //     new SQLitePluginPackage(),   // register SQLite Plugin here
-        //     new MainReactPackage());
+        //   @SuppressWarnings("UnnecessaryLocalVariable")
+        //   List<ReactPackage> packages = new PackageList(this).getPackages();
+        //   // Packages that cannot be autolinked yet can be added manually here, for example:
+        //   // packages.add(new MyReactNativePackage());
+        //   return packages;
         // }
+
+        @Override
+        protected List<ReactPackage> getPackages() {
+          return Arrays.<ReactPackage>asList(
+            new SQLitePluginPackage(),   // register SQLite Plugin here
+            new MainReactPackage());
+        }
 
         @Override
         protected String getJSMainModuleName() {
