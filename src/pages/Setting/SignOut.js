@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  AsyncStorage,
 } from 'react-native';
 import { Button } from 'native-base';
 import { createStackNavigator } from 'react-navigation-stack';
