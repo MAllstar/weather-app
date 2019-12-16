@@ -11,6 +11,13 @@ export default class Welcome extends Component {
   async componentDidMount() {
     // 如果usr不存在，无论如何跳转到登录页，就是第一次登录的情况
     // 如果usr存在，则看auth，auth===1则自动登录跳转到‘Main’，否则还是要登录
+    // // SQL(`CREATE TABLE "user" (
+    // //   "usr"	TEXT NOT NULL UNIQUE,
+    // //   "pwd"	TEXT NOT NULL
+    // // );`)
+    // await SQL(`INSERT OR REPLACE INTO user(usr, pwd) VALUES(yuch256, 123)`)
+    // let a = await SQL(`SELECT * FROM user`)
+    // console.log(a.rows.item(0))
     let nav = 'Sign';
     let usr = await AsyncStorage.getItem('usr');
     let authResult = await SQL('SELECT * FROM login');
